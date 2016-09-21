@@ -8,6 +8,9 @@
     "adminPassword": {
       "value": "<Password for all VMs>"
     },
+    "sshKeyData": {
+      "value": "GEN-SSH-PUB-KEY"
+    },
     "userImageStorageAccountName": {
       "value": "<your storage account name: new/existing>"
     },
@@ -31,5 +34,3 @@
     }
   }
 }
-
-fullarmvms1
