@@ -102,6 +102,11 @@
                     "properties": {
                         "primary": false
                     }
+                }, {
+                    "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(parameters('nicName'),'3'))]",
+                    "properties": {
+                        "primary": false
+                    }
                 }]
             }
         }

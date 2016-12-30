@@ -4,6 +4,7 @@
     "parameters": {
         "location": {
             "type": "string",
+            "defaultValue": "West US",
             "metadata": {
                 "description": "region of resources"
             }
@@ -23,7 +24,7 @@
 	},
         "storageAccountNewOrExisting" : {
             "type": "string",
-            "defaultValue" : "new",
+            "defaultValue" : "existing",
             "allowedValues" : [
                 "new",
                 "existing"
@@ -59,7 +60,7 @@
         },
         "adminPassword": {
             "type": "securestring",
-	    "defaultValue": "Pal0Alt0!29",
+	          "defaultValue": "Pal0Alt0!29",
             "metadata": {
                 "description": "Password for VM-Series administrator"
             }
@@ -97,6 +98,7 @@
         },
         "srcIPInboundNSG": {
             "type": "string",
+            "defaultValue": "0.0.0.0/0",
             "metadata": {
                 "description": "Your source public IP address. Added to the inbound DefaultNSG on eth0 (MGMT)"
             }
@@ -106,7 +108,7 @@
 		"metadata": {
 			"artifactsBaseUrl": ""
 		},
-		"defaultValue": "https://raw.githubusercontent.com/saurabhtrekker/UI1/master"
+		"defaultValue": "https://raw.githubusercontent.com/alpai/azure/master/vmseries-simple-template"
 	},
     "virtualNetworkName": {
       "type": "string",
@@ -229,14 +231,14 @@
     },
     "resources": [
     {
-	"name": "storageAcountSetup1",
-	"type": "Microsoft.Resources/deployments",
+	      "name": "storageAcountSetup1",
+	      "type": "Microsoft.Resources/deployments",
         "apiVersion": "2015-01-01",
-	"properties" : {
-		"mode": "Incremental",
-		"templateLink" : {
-		"uri" : "[variables('storageAccountSetupURL')]",
-		"contentVersion": "1.0.0.0"
+	      "properties" : {
+		        "mode": "Incremental",
+		        "templateLink" : {
+		        "uri" : "[variables('storageAccountSetupURL')]",
+		        "contentVersion": "1.0.0.0"
 	},
 	"parameters" : {
 		"location": {
