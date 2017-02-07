@@ -17,7 +17,7 @@ sudo sysctl -p /etc/sysctl.conf
 sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 50022 -j DNAT --to $1.5.4:22
 
 # DNAT everything else to FW Untrust except itself
-sudo iptables -t nat -A PREROUTING -i eth0 \! -s $1.1.4 -j DNAT --to-destination $1.1.4
+sudo iptables -t nat -A PREROUTING -i eth0 -d $1.1.4 -j DNAT --to-destination $1.1.4
 sudo iptables -A FORWARD -i eth0 -j ACCEPT
  
 # MASQUERADE all other outdoing traffic from NAT
