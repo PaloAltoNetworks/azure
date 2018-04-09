@@ -40,6 +40,18 @@
       },
       "defaultValue": "Standard_D3_v2"
     },
+    "fwSku": {
+       "type": "string",
+      "allowedValues": [
+          "byol",
+          "bundle1",
+          "bundle2"
+       ],
+       "metadata": {
+          "description": "Firewall License Model"
+       },
+       "defaultValue": "bundle1"
+    },
     "FromGatewayLogin": {
       "type": "string",
       "metadata": {
@@ -69,7 +81,6 @@
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
     "OSDiskName": "vmseries",
-    "fwSku" : "bundle2",
     "fwOffer" : "vmseries1",
     "fwPublisher": "paloaltonetworks",
     "addressPrefix": "[concat(variables('IPAddressPrefix'), '.0.0/16')]",
@@ -468,7 +479,7 @@
         "name": "[variables('fwVmName')]",
         "location": "[variables('location')]",
         "plan": {
-           "name": "[variables('fwSku')]",
+           "name": "[parameters('fwSku')]",
            "product": "[variables('fwOffer')]",
            "publisher": "[variables('fwPublisher')]"
         },
@@ -490,7 +501,7 @@
             "imageReference": {
               "publisher": "[variables('fwPublisher')]",
               "offer": "[variables('fwOffer')]",
-              "sku": "[variables('fwSku')]",
+              "sku": "[parameters('fwSku')]",
               "version": "latest"
           },
           "osDisk": {
@@ -498,7 +509,7 @@
             "caching": "ReadWrite",
             "createOption": "FromImage",
             "vhd": {
-               "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('strAccountName')), variables('apiVersion')).primaryEndpoints.blob,'vhds/',variables('fwVmName'), '-', variables('fwOffer'), '-', variables('fwSku'),'.vhd')]"
+               "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('strAccountName')), variables('apiVersion')).primaryEndpoints.blob,'vhds/',variables('fwVmName'), '-', variables('fwOffer'), '-', parameters('fwSku'),'.vhd')]"
             }
           }
         },
