@@ -34,7 +34,7 @@
         },
         "existingStorageAccountRG": {
             "type": "string",
-            "defaultValue" : "",
+            "defaultValue" : "storagearm1",
             "metadata": {
                "description": "Storage Resource Group of the Existing VM."
             }

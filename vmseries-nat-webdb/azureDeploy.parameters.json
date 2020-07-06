@@ -3,28 +3,28 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "adminUsername": {
-      "value": "<UserName for all VMs in this template, cannot be admin or root>"
+      "value": "pranav"
     },
     "adminPassword": {
-      "value": "<Password for all VMs>"
+      "value": "Pranav@07123"
     },
     "userImageStorageAccountName": {
-      "value": "<your storage account name: new/existing>"
+      "value": "new"
     },
     "dnsNameForFwPublicIP": {
-      "value": "<Globally unique lowercase name for VM-Series eth0 (MGMT)>"
+      "value": "pranshant1"
     },
     "dnsNameForNATPublicIP": {
-      "value": "<Globally unique lowercase name for NAT VM>"
+      "value": "prashant2"
     },
     "fwVmName": {
-      "value": "<Name of VM-Series in Azure portal>"
+      "value": "pranavvmarm"
     },
     "fwVmSize": {
       "value": "Standard_D3"
     },
     "fromGatewayLogin": {
-      "value": "<Your Source IP for Default NSG>"
+      "value": "0.0.0.0/0"
     },
     "IPAddressPrefix": {
       "value": "192.168"
